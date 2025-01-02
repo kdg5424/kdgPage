@@ -77,8 +77,11 @@ nav:
 - 기타 정보: otherinformation.ko.md
 
 
-#- title1:
-#  - subsection1:  
+- title1:
+  - subsection1:
+    - What is CFD?: CFD/whatisCFD.en.md
+    - CFD란?: CFD/whatisCFD.ko.md
+
 #  - subsection2:
 #  - subsection3:
 #  - subsection4:
@@ -89,10 +92,6 @@ nav:
 #  - subsection2:
 #  - subsection3:
 #  - subsection4:
-
-
-- Contact: contact.md
-- 문의: contact.ko.md
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -120,9 +119,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  analytics:
-    provider: google
-    property: G-7XR6MJZF8R
+#  analytics:
+#    provider: google
+#    property: G-7XR6MJZF8R
   arithmatex:
     generic: true
   alternate:
