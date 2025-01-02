@@ -1,0 +1,18 @@
+---
+nav_order: 11
+layout: page
+title: Q&A
+---
+
+This page is the Q&A page.<br>
+You can ask everything about BARAM, OpenFOAM or CFD.<br>
+Please Visit the below link.<br>
+Or Contact to us.<br>
+
+[Issue Link](https://github.com/nextfoam/baram/issues)
+
+[Discussion Link](https://github.com/nextfoam/baram/discussions)
+
+[NEXTFOAM homepage Link](https://www.nextfoam.co.kr/pd-Baram-qna.php)
+
+Contact Us : marketing@nextfoam.co.kr

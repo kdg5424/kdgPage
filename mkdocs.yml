@@ -1,0 +1,139 @@
+site_name: kdg page
+#site_url: https://baramcfd.org
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  language: en
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+  features:
+    - content.code.annotate # 코드에 주석 추가 가능
+    - content.tabs.link # 탭을 통해 여러 컨텐츠 연결(link)
+    - content.tooltips # 툴팁 표시
+    - content.code.copy # 코드 복사 (Copy) 기능 추가
+    - navigation.tabs # 상단 tab 추가
+    - navigation.tabs.sticky # 상단 tab 고정
+    - navigation.expand # navigation 확장
+    - navigation.prune
+    - toc.integrate # 목차, navigation 결합
+    - navigation.top
+    - i18n
+    - search.share
+
+plugins:
+  - search:
+  - awesome-pages:
+  - i18n:
+      default_language: en
+      languages:
+        en: "English"
+        ko: "한국어"
+      default_language: 'en'
+      no_translation:
+        en: "This page isn't translated to English."
+        ko: "이 페이지는 한국어로 번역되지 않음."
+      translate_nav:
+        en:
+          title1: "Blogs"
+          subsection1: "CFD"
+          subsection2: "OpenFOAM"
+          subsection3: "BARAM"
+          subsection4: "CFD-DEM"
+          #title2: "Users' Guide"
+        ko:
+          title1: "블로그"
+          subsection1: "CFD"
+          subsection2: "OpenFOAM"
+          subsection3: "BARAM"
+          subsection4: "CFD-DEM"
+          #title2: "매뉴얼"
+
+nav:
+- Home: index.md
+- 홈: index.ko.md
+- Major: major.md
+- 전공: major.ko.md
+- Work Experience: workexperience.md
+- 주요 경력: workexperience.ko.md
+- Other Information: otherinformation.md
+- 기타 정보: otherinformation.ko.md
+
+
+#- title1:
+#  - subsection1:  
+#  - subsection2:
+#  - subsection3:
+#  - subsection4:
+
+
+#- title2:
+#  - subsection1:
+#  - subsection2:
+#  - subsection3:
+#  - subsection4:
+
+
+- Contact: contact.md
+- 문의: contact.ko.md
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - toc:
+      toc_depth: 2
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  analytics:
+    provider: google
+    property: G-7XR6MJZF8R
+  arithmatex:
+    generic: true
+  alternate:
+    - name: "English (Home)"
+      link: ""
+      lang: en
+
+    - name: "한국어 (홈)"
+      link: ""
+      lang: ko
+
+extra_css:
+  - css/extra.css
+
