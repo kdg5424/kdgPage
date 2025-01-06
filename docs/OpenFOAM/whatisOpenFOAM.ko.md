@@ -37,7 +37,7 @@ OpenFOAM은 기본적으로 Linux 기반에서 작동을 한다. 하여 Linux에
 
 작업 관리자에서 "성능" 탭 접속을 하면 아래와 같은 화면을 볼 수 있다.<br>
 
-![task manager](/image/taskManager.png)
+![task manager](../image/taskManager.png)
 
 하단에 "가상화 : 사용" 옵션이 있는 것을 볼 수 있다.<br>
 이 때, "사용 안 함"으로 되어 있으면 BIOS로 진입하여 세팅을 설정하면 된다.<br>
@@ -46,7 +46,7 @@ BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로�
 
 이 후, windows 기능 켜기/끄기에서 아래 설정들을 체크한다.<br>
 
-![windows functino1](/image/windowsfunction1.png)  ![windows functino2](/image/windowsfunction2.png)
+![windows functino1](../image/windowsfunction1.png)  ![windows functino2](../image/windowsfunction2.png)
 
 **경우에 따라 windows 하이퍼바이저 플랫폼도 체크해야하는 경우가 있다.**
 
@@ -59,30 +59,30 @@ BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로�
 
 `wsl --install`
 
-![powershell wsl](/image/powershellWsl.png)
+![powershell wsl](../image/powershellWsl.png)
 
 그러면 자동적으로 wsl 설치가 진행된다.<br>
 이후, 아래 명령어를 입력하여 설치 가능한 배포 목록을 확인한다.<br>
 
 `wsl -l -o`
 
-![wsl list](/image/wsllist.png)
+![wsl list](../image/wsllist.png)
 
 목록에서 현재 본인이 설치하고자 하는 OS가 있는지 확인한다. 참고로 지금은 Ubuntu-24.04를 설치할 예정이다.<br>
 그리고 아래 명령어를 입력하여 Ubuntu-24.04를 설치한다.<br>
 
 `wsl --install Ubuntu-24.04`
 
-![Ubuntu-24.04 install](/image/ubuntu24.04install.png)
+![Ubuntu-24.04 install](../image/ubuntu24.04install.png)
 
 아래 그림과 같이 Ubuntu-24.04 설치가 진행되는 모습을 확인할 수 있다.<br>
 
-![Ubuntu-24.04 install process](/image/ubuntuinstallprocess.png)
+![Ubuntu-24.04 install process](../image/ubuntuinstallprocess.png)
 
 설치가 완료되면 UNIX 이름 (계정명)과 비밀번호를 입력한다.<br>
 **이 때, 입력하는 계정명과 비밀번호는 잊지 않도록 한다.**
 
-![Ubuntu-24.04](/image/ubuntu24.04.png)
+![Ubuntu-24.04](../image/ubuntu24.04.png)
 
 ### 필요 패키지 및 OpenFOAM 설치
 
@@ -102,9 +102,9 @@ sudo apt-get update
 sudo apt-get install -y build-essential flex zlib1g-dev libgmp-dev libmpfr-dev texinfo cmake
 ```
 
-![apt-get update](/image/aptgetupdate.png)
+![apt-get update](../image/aptgetupdate.png)
 
-![apt-get install](/image/aptgetinstall.png)
+![apt-get install](../image/aptgetinstall.png)
 
 이후, openmpi를 설치한다. openmpi는 node간 통신을 위해 개발된 소프트웨어로 openmp의 기능도 포함하고 있어 core간 통신도 가능하게 한다.<br>
 ESI에서는 현재 openmpi 2와 3의 특정 버전에서 know issue가 있으므로 최소 권장 사항을 지정하고 있다.<br>
@@ -131,7 +131,7 @@ cp /opt/openmpi-4.1.6.tar.gz .
 tar zxf openmpi-4.1.6.tar.gz
 ```
 
-![mpi installation](/image/mpiinstallation(1).png)
+![mpi installation](../image/mpiinstallation(1).png)
 
 압축 해제한 폴더로 이동하여 openmpi 소스코드를 컴파일 한다.
 
@@ -154,7 +154,7 @@ source /etc/bash.bashrc
 
 `mpirun -V`
 
-![mpi check](/image/mpirun.png)
+![mpi check](../image/mpirun.png)
 
 다음으로 OpenFOAM을 컴파일한다.<br>
 OpenFOAM은 ESI의 v2412 버전을 컴파일한다.<br>
@@ -174,9 +174,9 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 10
 update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 10
 sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
-``
+```
 
-![gcc version](/image/gcc.png)
+![gcc version](../image/gcc.png)
 
 gcc 버전을 9로 변경하였으면 OpenFOAM 소스 코드를 다운로드 받는다.<br>
 
@@ -190,7 +190,7 @@ mv OpenFOAM-v2412 /opt/OpenFOAM
 mv ThirdParty-v2412 /opt/OpenFOAM
 ```
 
-![opt directory](/image/opt.png)
+![opt directory](../image/opt.png)
 
 OpenFOAM-v2412 폴더로 이동하고 Allwmake를 실행하여 OpenFOAM을 컴파일한다.<br>
 이 때, ThirdParty도 같이 컴파일된다.
@@ -201,4 +201,4 @@ source ./etc/bashrc
 ./Allwmake -j 4 all
 ```
 
-![OpenFOAM Compile](/image/openfoamcompile.png)
+![OpenFOAM Compile](../image/openfoamcompile.png)
