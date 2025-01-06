@@ -81,6 +81,9 @@ nav:
   - subsection1:
     - What is CFD?: CFD/whatisCFD.en.md
     - CFD란?: CFD/whatisCFD.ko.md
+  - subsection2:
+    - What is OpenFOAM?: OpenFOAM/whatisOpenFOAM.en.md
+    - OpenFOAM이란?: OpenFOAM/whatisOpenFOAM.ko.md
 
 #  - subsection2:
 #  - subsection3:
