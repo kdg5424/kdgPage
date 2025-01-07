@@ -68,10 +68,13 @@ BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로�
 
 ![wsl list](../image/wsllist.png)
 
+또한, 아래 링크에서 WSL2 커널을 받아 설치해준다.
+[WSL2 커널](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
 목록에서 현재 본인이 설치하고자 하는 OS가 있는지 확인한다. 참고로 지금은 Ubuntu-24.04를 설치할 예정이다.<br>
 그리고 아래 명령어를 입력하여 Ubuntu-24.04를 설치한다.<br>
 
-`wsl --install Ubuntu-24.04`
+`wsl --install -d Ubuntu-24.04`
 
 ![Ubuntu-24.04 install](../image/ubuntu24.04install.png)
 
@@ -145,7 +148,6 @@ make install
 그리고 전역 환경 및 bash shell에 openmpi 경로를 설정한다.<br>
 
 ```
-vi /etc/bash.bashrc
 echo 'export PATH=$PATH:/opt/openmpi-4.1.6/bin' >> /etc/bash.bashrc
 source /etc/bash.bashrc
 ```
