@@ -745,9 +745,11 @@ BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로�
 이후, 아래 명령어를 입력하여 설치 가능한 배포 목록을 확인한다.<br></p>
 <p><code>wsl -l -o</code></p>
 <p><img alt="wsl list" src="../../image/wsllist.png" /></p>
+<p>또한, 아래 링크에서 WSL2 커널을 받아 설치해준다.
+<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 커널</a></p>
 <p>목록에서 현재 본인이 설치하고자 하는 OS가 있는지 확인한다. 참고로 지금은 Ubuntu-24.04를 설치할 예정이다.<br>
 그리고 아래 명령어를 입력하여 Ubuntu-24.04를 설치한다.<br></p>
-<p><code>wsl --install Ubuntu-24.04</code></p>
+<p><code>wsl --install -d Ubuntu-24.04</code></p>
 <p><img alt="Ubuntu-24.04 install" src="../../image/ubuntu24.04install.png" /></p>
 <p>아래 그림과 같이 Ubuntu-24.04 설치가 진행되는 모습을 확인할 수 있다.<br></p>
 <p><img alt="Ubuntu-24.04 install process" src="../../image/ubuntuinstallprocess.png" /></p>
@@ -790,8 +792,7 @@ make -j 4 all
 make install
 </code></pre></div>
 <p>그리고 전역 환경 및 bash shell에 openmpi 경로를 설정한다.<br></p>
-<div class="highlight"><pre><span></span><code>vi /etc/bash.bashrc
-echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; &gt;&gt; /etc/bash.bashrc
+<div class="highlight"><pre><span></span><code>echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; &gt;&gt; /etc/bash.bashrc
 source /etc/bash.bashrc
 </code></pre></div>
 <p>이후 아래 명령어를 입력하여 openmpi-4.1.6이 정상적으로 설치되었음을 확인한다.<br></p>
