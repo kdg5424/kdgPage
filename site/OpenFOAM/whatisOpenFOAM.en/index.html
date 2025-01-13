@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openfoam-computational-fluid-dynamics" class="md-skip">
+        <a href="#openfoam-open-field-operation-and-manipulation" class="md-skip">
           Skip to content
         </a>
       
@@ -636,36 +636,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cfd" class="md-nav__link">
+  <a href="#what-is-openfoam" class="md-nav__link">
     <span class="md-ellipsis">
-      CFD?
+      What is OpenFOAM?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-purpose-of-cfd-cae" class="md-nav__link">
+  <a href="#installing-openfoam" class="md-nav__link">
     <span class="md-ellipsis">
-      The purpose of CFD/ CAE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cfd-governing-equation" class="md-nav__link">
-    <span class="md-ellipsis">
-      CFD governing equation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#governing-equation-decision-and-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      Governing equation Decision and models
+      Installing OpenFOAM
     </span>
   </a>
   
@@ -713,51 +695,139 @@
 <ul>
 <li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../OpenFOAM/whatisOpenFOAM.ko/">한국어</a></li>
 </ul>
-<h1 id="openfoam-computational-fluid-dynamics">OpenFOAM (Computational Fluid Dynamics)</h1>
-<h2 id="cfd">CFD?</h2>
-<p>CFD is abbreviation "Computational Fluid Dynamics".<code>&lt;br&gt;</code>
-Normally, CFD purposes describing the movement or behavior of flow with Navier-Stokes Equation and Continuity Equation.<code>&lt;br&gt;</code>
-Then, why engineers try to describe or model the movement or behavior of flow?<code>&lt;br&gt;</code></p>
-<h2 id="the-purpose-of-cfd-cae">The purpose of CFD/ CAE</h2>
-<p>This questions could be corresponded to not only CFD but also CAE (Computer Aided Engineering).<code>&lt;br&gt;</code>
-CAE means that previous review or advance review for the product or process design using computer technology.<code>&lt;br&gt;</code> <a href="https://en.wikipedia.org/wiki/Computer-aided_engineering">wiki</a></p>
-<p>Engineers can't easily test or review the product and process before it is manufactured.<code>&lt;br&gt;</code>
-Lots of tests and experiments are needed. And it increases the development period.<code>&lt;br&gt;</code>
-With CAE, engineers can easily do advance-test, review and then do the real test or experiment about the optimized product and process.<code>&lt;br&gt;</code>
-CFD is one of the CAE field and the purpose of CFD is analyzing the fluid dynamics, heat transfer about product and process.<code>&lt;br&gt;</code></p>
-<h2 id="cfd-governing-equation">CFD governing equation</h2>
-<p>In CAE field, there are lots of simulations like FEA, CFD, mold. Every simulation fields need own governing equation.<code>&lt;br&gt;</code>
-Also CFD needs governing equation and generally computer solves <strong>Continuity Equation</strong> and <strong>Navier-Stokes Equation</strong>.</p>
+<h1 id="openfoam-open-field-operation-and-manipulation">OpenFOAM (Open Field Operation and Manipulation)</h1>
+<h2 id="what-is-openfoam">What is OpenFOAM?</h2>
+<p>OpenFOAM is a collection of CFD code libraries developed in C++.<br>
+This collection includes numerical methods, pre/post-processing tools, and continuum analysis solutions.<br>
+OpenFOAM is widely used in many industries, as well as in research and development.<br>
+OpenFOAM is generally developed and released by the following three organizations under the GNU GPL V3 license:<br></p>
 <ul>
-<li>Continuity Equation <code>&lt;br&gt;</code></li>
+<li>OpenFOAM ESI - ESI Group <a href="https://www.openfoam.com/">OpenFOAM ESI</a></li>
+<li>OpenFOAM org - OpenFOAM Foundation <a href="https://openfoam.org/">OpenFOAM org</a></li>
+<li>FOAM Extended - Wikki <a href="http://wikki.co.uk/index.php/foam-extend/">FOAM extended</a></li>
 </ul>
-<p><center><strong><span class="arithmatex">\(\partial\rho\over\partial t\)</span>+ <span class="arithmatex">\(\nabla\cdot(\rho U)\)</span> = 0 <br></strong></center></p>
-<pre><code>+$\rho$ : Fluid density `&lt;br&gt;`
-+ $t$ : Time `&lt;br&gt;`
-+ $U$ : Velocity vector of fluid `&lt;br&gt;`
-</code></pre>
-<p>And if fluid density is not changed (incompressible flow), <strong>Continuity Equation</strong> looks like this.<code>&lt;br&gt;</code></p>
-<p><center><strong><span class="arithmatex">\(\nabla\cdot U\)</span> = 0 <br></strong></center></p>
-<p>It means that divergence of velocity is zero for whole flow field.</p>
-<p>This equation is called continuity equation or mass conservation equation.<code>&lt;br&gt;</code>
-It means that mass (mass flowrate) is constant for the whole flow field.<code>&lt;br&gt;</code></p>
+<p>Additionally, NEXTFOAM develops, modifies, and releases the NextFOAM fork:</p>
 <ul>
-<li>Navier-Stokes Equation</li>
+<li>NextFOAM - NEXTFOAM <a href="https://github.com/nextfoam/nextfoam-cfd">NextFOAM</a></li>
 </ul>
-<p><center><strong><span class="arithmatex">\(\rho\)</span> (<span class="arithmatex">\(\partial U\over\partial t\)</span>+ <span class="arithmatex">\(U\cdot\nabla U\)</span>) = <span class="arithmatex">\(\nabla p+ \mu\nabla^2 u + \rho g\)</span> <br></strong></center></p>
-<pre><code>+$U$ : Velocity vector of fluid
-+ $p$ : Pressure
-+ $\mu$ : Viscosity
-+ $g$ : Gravity acceleration vector
-</code></pre>
-<p>This equation is induced from Newton's 2<sup>nd</sup> law (<span class="arithmatex">\(F=ma\)</span>).<code>&lt;br&gt;</code>
-And I'll write the meaning of each terms in next time.<code>&lt;br&gt;</code>
-In conclusion, we can get the acceleration of fluid (if we know acceleration, we can also know the velocity and coordinates) from the force in eqaution.<code>&lt;br&gt;</code></p>
-<h2 id="governing-equation-decision-and-models">Governing equation Decision and models</h2>
-<p>There are more governing equations for the various models like turbulence model, heat transfer, multi-phase.<code>&lt;br&gt;</code>
-The purpose of the governing equation is simple. To describe or model the movement of flow and to control this.<code>&lt;br&gt;</code>
-However, the models are different from the situation or phenomenon that engineers should treat or control.<code>&lt;br&gt;</code>
-So, engineers should easily assume their own system, problem and decide which governing equation to solve.</p>
+<h2 id="installing-openfoam">Installing OpenFOAM</h2>
+<p>OpenFOAM primarily runs on Linux. Hence, it needs to be compiled and built on Linux.<br>
+That said, it is not impossible to use OpenFOAM on Windows. You can install OpenFOAM using virtualization tools like WSL or Hyper-V.<br>
+A virtual machine allows you to create and run a different OS environment within your current Windows system.<br>
+This guide will demonstrate how to set up WSL and install OpenFOAM.</p>
+<p><strong>- The installation and setup process is the same for both Linux and WSL.</strong><br>
+<strong>- This guide is based on the following versions:</strong></p>
+<ul>
+<li>Windows: Windows 11</li>
+<li>CPU: Intel i5-1135G7 2.40 GHz</li>
+<li>WSL: Ubuntu 24.04</li>
+<li>OpenFOAM: OpenFOAM ESI v2412 (latest version as of January 5, 2025)</li>
+</ul>
+<h3 id="setting-up-a-virtual-environment">Setting up a Virtual Environment</h3>
+<p>First, check if your CPU supports virtualization. Most modern Intel CPUs support virtualization.<br>
+However, some models may not, so it's important to verify. Below is a guide to check:</p>
+<p>Open the Task Manager and go to the "Performance" tab. You should see a screen like the one below:<br></p>
+<p><img alt="task manager" src="../../image/taskManager.png" /></p>
+<p>At the bottom, look for the "Virtualization: Enabled" option.<br>
+If it says "Disabled," you'll need to enter the BIOS and enable the virtualization setting.<br>
+Refer to this blog for instructions on enabling virtualization in the BIOS:<br>
+<a href="https://m.blog.naver.com/presiddd/222699352932">BIOS Virtualization Settings</a></p>
+<p>Next, go to "Turn Windows Features On or Off" and enable the following settings:<br></p>
+<p><img alt="windows function1" src="../../image/windowsfunction1.png" />  <img alt="windows function2" src="../../image/windowsfunction2.png" /></p>
+<p><strong>In some cases, you may also need to enable the Windows Hypervisor Platform.</strong></p>
+<p>Restart your computer to complete the virtual environment setup.</p>
+<h3 id="installing-wsl">Installing WSL</h3>
+<p>Once the virtual environment is configured, open PowerShell with administrator privileges.<br>
+Run the following command to install WSL:<br></p>
+<p><code>wsl --install</code></p>
+<p><img alt="powershell wsl" src="../../image/powershellWsl.png" /></p>
+<p>This will automatically install WSL. Afterward, run the following command to list the available distributions:<br></p>
+<p><code>wsl -l -o</code></p>
+<p><img alt="wsl list" src="../../image/wsllist.png" /></p>
+<p>Download and install the WSL2 kernel from the link below:<br>
+<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 Kernel</a></p>
+<p>From the list, identify the OS you wish to install. In this case, we will install Ubuntu 24.04.<br>
+Run the following command to install Ubuntu 24.04:<br></p>
+<p><code>wsl --install -d Ubuntu-24.04</code></p>
+<p><img alt="Ubuntu-24.04 install" src="../../image/ubuntu24.04install.png" /></p>
+<p>The installation process will look like this:<br></p>
+<p><img alt="Ubuntu-24.04 install process" src="../../image/ubuntuinstallprocess.png" /></p>
+<p>Once installation is complete, create a UNIX username and password.<br>
+<strong>Be sure to remember the username and password you set.</strong></p>
+<p><img alt="Ubuntu-24.04" src="../../image/ubuntu24.04.png" /></p>
+<h3 id="installing-required-packages-and-openfoam">Installing Required Packages and OpenFOAM</h3>
+<p>There are several ways to install OpenFOAM, including using binary run files or apt. However, as of January 5, 2025, OpenFOAM cannot be installed using apt on Ubuntu 24.04.<br>
+For those who need to modify OpenFOAM source code, we will compile it from source.</p>
+<h4 id="1-installing-required-packages">1) Installing Required Packages</h4>
+<p>To compile OpenFOAM, you need several packages and software like openmpi and gcc.<br>
+First, update <code>apt-get</code> and install the required packages:<br></p>
+<div class="highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install -y build-essential flex zlib1g-dev libgmp-dev libmpfr-dev texinfo cmake
+</code></pre></div>
+<p><img alt="apt-get update" src="../../image/aptgetupdate.png" /></p>
+<p><img alt="apt-get install" src="../../image/aptgetinstall.png" /></p>
+<p>Next, install openmpi. OpenMPI is a software that enables communication between nodes and cores.<br>
+Run the following command to download the OpenMPI 4.1.6 source code:</p>
+<p><code>wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz</code></p>
+<p>Move the downloaded archive to the shared folder <code>/opt</code>:</p>
+<p><code>sudo cp ./openmpi-4.1.6.tar.gz /opt</code></p>
+<p>Switch to the administrator account and navigate to the home directory:</p>
+<div class="highlight"><pre><span></span><code>sudo su
+cd
+</code></pre></div>
+<p>Copy the tar file to the current directory and extract it:</p>
+<div class="highlight"><pre><span></span><code>cp /opt/openmpi-4.1.6.tar.gz .
+tar zxf openmpi-4.1.6.tar.gz
+</code></pre></div>
+<p><img alt="mpi installation" src="../../image/mpiinstallation%281%29.png" /></p>
+<p>Navigate to the extracted folder and compile the OpenMPI source code:</p>
+<div class="highlight"><pre><span></span><code>cd openmpi-4.1.6
+./configure --prefix=/opt/openmpi-4.1.6
+make -j 4 all
+make install
+</code></pre></div>
+<p>Set the OpenMPI path in the global environment and bash shell:</p>
+<div class="highlight"><pre><span></span><code>echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; &gt;&gt; /etc/bash.bashrc
+source /etc/bash.bashrc
+</code></pre></div>
+<p>Verify the installation of OpenMPI 4.1.6 by running:</p>
+<p><code>mpirun -V</code></p>
+<p><img alt="mpi check" src="../../image/mpirun.png" /></p>
+<p>Next, compile OpenFOAM ESI v2412. Since gcc versions 11 and 13 have known issues with v2306, we will use gcc 9.<br>
+Run the following command to install gcc 9:</p>
+<div class="highlight"><pre><span></span><code>apt install gcc-9 g++-9
+</code></pre></div>
+<p>Change the default gcc version to 9:</p>
+<div class="highlight"><pre><span></span><code>update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 10
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 10
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+</code></pre></div>
+<p><img alt="gcc version" src="../../image/gcc.png" /></p>
+<p>Download the OpenFOAM source code:</p>
+<div class="highlight"><pre><span></span><code>wget https://dl.openfoam.com/source/v2412/OpenFOAM-v2412.tgz
+wget https://dl.openfoam.com/source/v2412/ThirdParty-v2412.tgz
+tar -xvzf OpenFOAM-v2412.tgz
+tar -xzvf ThirdParty-v2412.tgz
+mkdir -p /opt/OpenFOAM
+mv OpenFOAM-v2412 /opt/OpenFOAM
+mv ThirdParty-v2412 /opt/OpenFOAM
+</code></pre></div>
+<p><img alt="opt directory" src="../../image/opt.png" /></p>
+<p>Navigate to the <code>OpenFOAM-v2412</code> folder and run <code>Allwmake</code> to compile OpenFOAM and its ThirdParty dependencies:</p>
+<div class="highlight"><pre><span></span><code>cd OpenFOAM-v2412
+source ./etc/bashrc
+./Allwmake -j 4 all
+</code></pre></div>
+<p><img alt="OpenFOAM Compile" src="../../image/openfoamcompile.png" /></p>
+<p>Add the OpenFOAM environment variable to <code>/etc/bash.bashrc</code> to simplify launching OpenFOAM:</p>
+<div class="highlight"><pre><span></span><code>echo &quot;alias of24=&#39;. /opt/OpenFOAM/OpenFOAM-v2412/etc/bashrc&#39;&quot; &gt;&gt; /etc/bash.bashrc
+</code></pre></div>
+<p>If you encounter missing binaries (e.g., <code>pimpleFoam</code>), navigate to the <code>solvers</code> folder and rerun <code>Allwmake</code> manually:</p>
+<p><img alt="pimpleFoam missing" src="../../image/pimpleFoamError.png" /></p>
+<p><img alt="OpenFOAM binary" src="../../image/openfoambinary.png" /></p>
+<p>Finally, run the <code>pitzDaily</code> tutorial to confirm the installation works correctly:</p>
+<p><img alt="pitzDaily" src="../../image/pitzDaily.png" /></p>
 
 
 
