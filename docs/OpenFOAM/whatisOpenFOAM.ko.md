@@ -28,7 +28,7 @@ OpenFOAM은 기본적으로 Linux 기반에서 작동을 한다. 하여 Linux에
 + Windows : Windows 11
 + CPU : intel i5-1135G7 2.40 GHz
 + WSL : Ubuntu 24.04
-+ OpenFOAM : OpenFOAM ESI v2412 (2025ㄴ년 1월 5일 기준 최신판)
++ OpenFOAM : OpenFOAM ESI v2412 (2025년 1월 5일 기준 최신판)
 
 ### 가상환경 세팅
 
