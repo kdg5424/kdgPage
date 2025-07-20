@@ -657,36 +657,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple" class="md-nav__link">
+  <a href="#what-is-the-simple-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      SIMPLE 알고리즘이란?
+      What is the SIMPLE Algorithm?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple_1" class="md-nav__link">
+  <a href="#overview-of-the-simple-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      SIMPLE 알고리즘 개요
+      Overview of the SIMPLE Algorithm
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple_2" class="md-nav__link">
+  <a href="#explanation-of-the-simple-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      SIMPLE 알고리즘 설명
+      Explanation of the SIMPLE Algorithm
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple_3" class="md-nav__link">
+  <a href="#simple-algorithm-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      SIMPLE 알고리즘 풀이
+      SIMPLE Algorithm Steps
     </span>
   </a>
   
@@ -735,70 +735,66 @@
 <li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../CFD/SIMPLE.ko/">한국어</a></li>
 </ul>
 <h1 id="simple-semi-implicit-method-for-pressure-linked-equations">SIMPLE (Semi-Implicit Method for Pressure-Linked Equations)</h1>
-<h2 id="simple">SIMPLE 알고리즘이란?</h2>
-<p>단순해서 혹은 간단해서 (simple) SIMPLE 알고리즘이 아니다.<br>
-사실 오히려 그 반대라고 할 수 있다. 본 블로그 주인은 이 알고리즘에 이름을 지은 사람에게 박수를 보내고 싶다.<br>
-이름을 정말 잘 지었다고...<br></p>
-<p>CFD는 결국 연속방정식과 운동량 방정식을 푸는 기법이라고 전에 기술한 바 있다.<br>
-비압축성 유동에서는 이 방정식에 큰 문제가 발생한다.<br>
-바로 연속방정식에 압력에 대한 항이 없다는 것이다.<br>
-CFD는 결국 유동장의 압력과 속도를 푸는 것이 주된 목적이다.<br>
-그런데 풀어야 할 미지수 중에 하나가 방정식에 포함되어 있지 않다니... <br>
-SIMPLE 알고리즘은 위 문제를 해결하기 위해 개발된 알고리즘으로 본격적으로 설명을 해보고자 한다.<br></p>
-<h2 id="simple_1">SIMPLE 알고리즘 개요</h2>
-<p>SIMPLE 알고리즘은 주로 아래 목적들을 달성하기 위한 반복 절차라고 설명하면 된다.<br></p>
-<p>1) 속도장과 압력장을 연결한다.
-2) 속도장 보정을 통해 연속 방정식 (질량 보존)을 만족시킨다.</p>
-<p>아니 이렇게 간단한 (simple) 목적인데, 왜 CFD 엔지니어들은 그토록 어려워 하는것인가?<br>
-왜냐하면 반복 절차가 복잡하기 때문이다.<br></p>
-<p><img alt="SIMPLE 알고리즘" src="../../image/SIMPLE.png" /></p>
-<p>이제부터 본격적으로 들어가보자.</p>
-<h2 id="simple_2">SIMPLE 알고리즘 설명</h2>
-<p>연속방정식과 운동량 방정식은 아래와 같다.</p>
+<h2 id="what-is-the-simple-algorithm">What is the SIMPLE Algorithm?</h2>
+<p>SIMPLE does not mean "simple" because it is easy or straightforward.<br />
+In fact, the opposite is true. The author of this blog would like to applaud the person who named this algorithm.<br />
+What a brilliant choice of name...  </p>
+<p>As previously mentioned, CFD ultimately involves solving the continuity equation and the momentum equation.<br />
+However, for incompressible flows, there is a significant problem:<br />
+The continuity equation does not contain a pressure term.<br />
+The primary goal of CFD is to solve for the pressure and velocity fields of a flow.<br />
+But one of the unknowns we need to solve for does not even appear in the equation...  </p>
+<p>The SIMPLE algorithm was developed to address this issue, and now we will explain it in detail.  </p>
+<hr />
+<h2 id="overview-of-the-simple-algorithm">Overview of the SIMPLE Algorithm</h2>
+<p>The SIMPLE algorithm is essentially an iterative procedure designed to achieve the following objectives:</p>
+<ol>
+<li>Link the velocity field with the pressure field.</li>
+<li>Correct the velocity field to satisfy the continuity equation (mass conservation).</li>
+</ol>
+<p>Sounds simple, right? So why do CFD engineers find it so difficult?<br />
+Because the iterative process itself is complex.  </p>
+<p><img alt="SIMPLE Algorithm" src="../../image/SIMPLE.png" /></p>
+<p>Let’s dive deeper into how it works.</p>
+<hr />
+<h2 id="explanation-of-the-simple-algorithm">Explanation of the SIMPLE Algorithm</h2>
+<p>The continuity and momentum equations are given as follows:</p>
 <ul>
 <li>
-<p>연속 방정식<br>
-<center><strong><span class="arithmatex">\(\partial\rho\over\partial t\)</span>+ <span class="arithmatex">\(\nabla\cdot(\rho U)\)</span> = 0 <br></strong></center></p>
+<p><strong>Continuity Equation</strong><br />
+<center><strong><span class="arithmatex">\(\partial\rho\over\partial t\)</span> + <span class="arithmatex">\(\nabla\cdot(\rho U)\)</span> = 0</strong></center></p>
 <ul>
-<li><span class="arithmatex">\(\rho\)</span> : 유체 밀도<br></li>
-<li><span class="arithmatex">\(t\)</span> : 시간<br></li>
-<li><span class="arithmatex">\(U\)</span> : 유체 속도<br></li>
+<li><span class="arithmatex">\(\rho\)</span>: Fluid density  </li>
+<li><span class="arithmatex">\(t\)</span>: Time  </li>
+<li><span class="arithmatex">\(U\)</span>: Fluid velocity  </li>
 </ul>
 </li>
 <li>
-<p>운동량방정식<br>
-<center><strong><span class="arithmatex">\(\rho\)</span> (<span class="arithmatex">\(\partial U\over\partial t\)</span>+ <span class="arithmatex">\(U\cdot\nabla U\)</span>) = -<span class="arithmatex">\(\nabla p+ \mu\nabla^2 u + \rho g\)</span> <br></strong></center></p>
+<p><strong>Momentum Equation</strong><br />
+<center><strong><span class="arithmatex">\(\rho\)</span> (<span class="arithmatex">\(\partial U\over\partial t\)</span> + <span class="arithmatex">\(U\cdot\nabla U\)</span>) = -<span class="arithmatex">\(\nabla p + \mu\nabla^2 U + \rho g\)</span></strong></center></p>
 <ul>
-<li><span class="arithmatex">\(U\)</span> : 유체 속도</li>
-<li><span class="arithmatex">\(p\)</span> : 압력</li>
-<li><span class="arithmatex">\(\mu\)</span> : 점성계수</li>
-<li><span class="arithmatex">\(g\)</span> : 중력가속도 벡터</li>
+<li><span class="arithmatex">\(U\)</span>: Fluid velocity  </li>
+<li><span class="arithmatex">\(p\)</span>: Pressure  </li>
+<li><span class="arithmatex">\(\mu\)</span>: Dynamic viscosity  </li>
+<li><span class="arithmatex">\(g\)</span>: Gravitational acceleration vector  </li>
 </ul>
 </li>
 </ul>
-<p>이 때, 식 기술의 편의를 위해 정상 상태에 비압축성 및 중력은 작용하지 않는다고 가정하자. 그러면 위 두 식은 아래와 같이 된다.</p>
+<p>For simplicity, assume steady-state, incompressible flow without gravity.<br />
+The equations then simplify to:</p>
 <ul>
 <li>
-<p>연속 방정식<br>
-<center><strong><span class="arithmatex">\(\nabla\cdot U\)</span> = 0 <br></strong></center></p>
-<ul>
-<li><span class="arithmatex">\(U\)</span> : 유체 속도<br></li>
-</ul>
+<p><strong>Continuity Equation</strong><br />
+<center><strong><span class="arithmatex">\(\nabla\cdot U = 0\)</span></strong></center></p>
 </li>
 <li>
-<p>운동량방정식<br>
-<center><strong><span class="arithmatex">\(U\cdot\nabla U\)</span> = -<span class="arithmatex">\(\nabla p+ \mu\nabla^2 u\)</span> <br></strong></center></p>
-<ul>
-<li><span class="arithmatex">\(U\)</span> : 유체 속도</li>
-<li><span class="arithmatex">\(p\)</span> : 압력</li>
-<li><span class="arithmatex">\(\mu\)</span> : 점성계수</li>
-<li><span class="arithmatex">\(g\)</span> : 중력가속도 벡터</li>
-</ul>
+<p><strong>Momentum Equation</strong><br />
+<center><strong><span class="arithmatex">\(U\cdot\nabla U = -\nabla p + \mu\nabla^2 U\)</span></strong></center></p>
 </li>
 </ul>
-<p>이 때, 운동량 방정식에 점성항을 왼쪽으로 넘기면 행렬 형태로 아래와 같이 식을 정리할 수 있다.<br></p>
-<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span> <br></strong></center>
-<span class="arithmatex">\(M\)</span> : 행렬 계수</p>
+<p>Next, move the viscous term to the left-hand side and express the momentum equation in matrix form:</p>
+<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span></strong></center>  </p>
+<p>Where <span class="arithmatex">\(M\)</span> is a coefficient matrix.</p>
 <div class="arithmatex">\[
 \begin{pmatrix}
 M_{1,1} &amp; M_{1,2} &amp; M_{1,3} &amp; \dots  &amp; M_{1,n} \\
@@ -823,14 +819,12 @@ U_n
 \left( \dfrac{\partial p}{\partial x} \right)_n
 \end{pmatrix}
 \]</div>
-<p>그 복잡하던 운동량 방정식이 AX=B 형태의 간단한 행렬 형태로 바뀌다니, 정말 놀랍지 아니한가<br>
-위 식은 모든 셀에 적용된다. 즉, 셀이 N개면 M 행렬은 NXN 행렬이 된다.<br>
-이후, 왼쪽 항을 주대각 성분과 비대각 성분으로 구분하다.<br>
-이는 SIMPLE에서 근사화된 보정식을 유도하기 위한 목적이다.<br>
-그 이유는 아래에서 자세하게 설명한다.<br></p>
-<p><center><strong><span class="arithmatex">\(AU - H = -\nabla p\)</span> <br></strong></center></p>
+<p>The complex momentum equation is now in a simple matrix form: <span class="arithmatex">\(AX = B\)</span>.<br />
+This applies to every cell, meaning if there are <span class="arithmatex">\(N\)</span> cells, <span class="arithmatex">\(M\)</span> is an <span class="arithmatex">\(N \times N\)</span> matrix.  </p>
+<p>We then separate the left-hand side into diagonal and off-diagonal terms for approximation purposes in the correction step:</p>
+<p><center><strong><span class="arithmatex">\(AU - H = -\nabla p\)</span></strong></center></p>
 <ul>
-<li><span class="arithmatex">\(A\)</span> : 주대각 성분 행렬이며, 아래와 같이 표현된다.</li>
+<li><span class="arithmatex">\(A\)</span>: Diagonal coefficient matrix, expressed as:</li>
 </ul>
 <div class="arithmatex">\[
 \mathcal{A} =
@@ -842,10 +836,7 @@ A_{1,1} &amp; 0       &amp; 0       &amp; \dots  &amp; 0 \\
 0       &amp; 0       &amp; 0       &amp; \dots  &amp; A_{n,n}
 \end{pmatrix}
 \]</div>
-<p>이 때, A는 쉽게 역행렬을 구할 수 있으며 아래와 같이 표현된다.<br>
-AX=B 형태의 행렬 곱에서 X를 구하기 위해, 양변에 A의 역행렬을 취해주는 방법은 가장 흔한 방법이다.<br>
-하지만 행렬 M의 역행렬은 쉽게 구할 수 없고, A는 주대각 성분만 남게 되어 쉽게 역행렬을 구할 수 있게 된다.<br>
-따라서 보정 단계에서 계산을 획기적으로 줄여준다.<br></p>
+<p>The inverse of <span class="arithmatex">\(A\)</span> is easy to compute:</p>
 <div class="arithmatex">\[
 \mathcal{A}^{-1} =
 \begin{pmatrix}
@@ -856,34 +847,43 @@ AX=B 형태의 행렬 곱에서 X를 구하기 위해, 양변에 A의 역행렬�
 0 &amp; 0 &amp; 0 &amp; \dots &amp; \dfrac{1}{A_{n,n}}
 \end{pmatrix}
 \]</div>
-<p>또한 H는 off-digonal terms (비대각 성분)으로 비대각 성분과 이전 계산에서 속도로 계산된다.<br>
-그리고 아래 식으로 표현한다.<br></p>
-<p><center><strong><span class="arithmatex">\(H = AU - MU\)</span> <br></strong></center></p>
-<p>다시 위로 돌아가서, 운동량 방정식은 아래와 같이 표현할 수 있다.<br></p>
-<p><center><strong><span class="arithmatex">\(AU - H = -\nabla p\)</span> <br></strong></center></p>
-<p>그리고 연속 방정식은 아래와 같이 기술된다.<br></p>
-<p><center><strong><span class="arithmatex">\(\nabla\cdot U\)</span> = 0 <br></strong></center></p>
-<p>이제 압력 방정식을 유도할 수 있다.<br></p>
-<p>연속방정식을 U에 대해 정리하면 아래와 같아진다.<br></p>
-<p><center><strong><span class="arithmatex">\(AU - H = -\nabla p\)</span> <br></strong></center>
-<center><strong><span class="arithmatex">\(U = A^{-1}H-A^{-1}\nabla p\)</span> <br></strong></center></p>
-<p>이를 연속 방정식에 대입하면 아래와 같아진다.<br></p>
-<p><center><strong><span class="arithmatex">\(\nabla\cdot U\)</span> = 0 <br></strong></center>
-<center><strong><span class="arithmatex">\(\nabla \cdot [A^{-1}H-A^{-1}\nabla p] = 0\)</span> <br></strong></center></p>
-<p>그러면 p에 대한 Possion equation을 아래와 같이 구할 수 있다.<br>
-<center><strong><span class="arithmatex">\(\nabla \cdot (A^{-1}H) = \nabla \cdot (A^{-1}\nabla p)\)</span> <br></strong></center></p>
-<p>이제 4개 미지수에 대해 4개 방정식이 만들어졌다. (<span class="arithmatex">\(U_X, U_Y, U_Z, p\)</span>)<br></p>
-<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span> <br></strong></center>
-<center><strong><span class="arithmatex">\(\nabla \cdot (A^{-1}H) = \nabla \cdot (A^{-1}\nabla p)\)</span> <br></strong></center></p>
-<p>그렇다면 이제 어떤 방식으로 방정식을 풀게 될까?<br></p>
-<h2 id="simple_3">SIMPLE 알고리즘 풀이</h2>
-<h3 id="1">1. 운동량 방정식에 대해 속도를 푼다. 이 속도는 연속 방정식을 만족시키지 못한다.<br></h3>
-<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span> <br></strong></center></p>
-<h3 id="2-possion-equation">2. Possion equation에 대해 압력을 푼다.<br></h3>
-<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span> <br></strong></center></p>
-<h3 id="3">3. 압력장을 이용해 연속 방정식을 만족시키게 속도장을 보정한다.<br></h3>
-<p><center><strong><span class="arithmatex">\(U = A^{-1}H-A^{-1}\nabla p\)</span> <br></strong></center></p>
-<h3 id="4">4. 속도장이 운동량 방정식을 만족시키지 않으므로 이 방식을 반복한다.<br></h3>
+<p>This greatly reduces computation in the correction step.</p>
+<p>Here, <span class="arithmatex">\(H\)</span> represents off-diagonal terms and is expressed as:</p>
+<p><center><strong><span class="arithmatex">\(H = AU - MU\)</span></strong></center></p>
+<p>Returning to the momentum equation:</p>
+<p><center><strong><span class="arithmatex">\(AU - H = -\nabla p\)</span></strong></center></p>
+<p>The continuity equation remains:</p>
+<p><center><strong><span class="arithmatex">\(\nabla\cdot U = 0\)</span></strong></center></p>
+<hr />
+<p>Now, derive the pressure equation:</p>
+<p>From the momentum equation:</p>
+<p><center><strong><span class="arithmatex">\(U = A^{-1}H - A^{-1}\nabla p\)</span></strong></center></p>
+<p>Substitute into the continuity equation:</p>
+<p><center><strong><span class="arithmatex">\(\nabla \cdot [A^{-1}H - A^{-1}\nabla p] = 0\)</span></strong></center></p>
+<p>This gives the Poisson equation for pressure:</p>
+<p><center><strong><span class="arithmatex">\(\nabla \cdot (A^{-1}H) = \nabla \cdot (A^{-1}\nabla p)\)</span></strong></center></p>
+<p>Now we have four equations for four unknowns (<span class="arithmatex">\(U_X, U_Y, U_Z, p\)</span>):</p>
+<p><center><strong><span class="arithmatex">\(MU = -\nabla p\)</span></strong></center><br />
+<center><strong><span class="arithmatex">\(\nabla \cdot (A^{-1}H) = \nabla \cdot (A^{-1}\nabla p)\)</span></strong></center></p>
+<hr />
+<h2 id="simple-algorithm-steps">SIMPLE Algorithm Steps</h2>
+<ol>
+<li>
+<p>Solve the momentum equation for velocity (this velocity does not satisfy continuity yet):<br />
+<center><strong><span class="arithmatex">\(MU = -\nabla p\)</span></strong></center></p>
+</li>
+<li>
+<p>Solve the Poisson equation for pressure:<br />
+<center><strong><span class="arithmatex">\(\nabla \cdot (A^{-1}H) = \nabla \cdot (A^{-1}\nabla p)\)</span></strong></center></p>
+</li>
+<li>
+<p>Correct the velocity field using the pressure field:<br />
+<center><strong><span class="arithmatex">\(U = A^{-1}H - A^{-1}\nabla p\)</span></strong></center></p>
+</li>
+<li>
+<p>Repeat the process until both momentum and continuity equations are satisfied.</p>
+</li>
+</ol>
 
 
 
