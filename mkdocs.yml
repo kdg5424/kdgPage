@@ -82,10 +82,10 @@ nav:
     - What is CFD?: CFD/whatisCFD.en.md
     - CFD란?: CFD/whatisCFD.ko.md
     - SIMPLE 알고리즘 : CFD/SIMPLE.ko.md
+    - SIMPLE algorithm : CFD/SIMPLE.en.md
   - subsection2:
     - What is OpenFOAM?: OpenFOAM/whatisOpenFOAM.en.md
     - OpenFOAM이란?: OpenFOAM/whatisOpenFOAM.ko.md
-    - SIMPLE algorithm : CFD/SIMPLE.en.md
 
 #  - subsection2:
 #  - subsection3:
