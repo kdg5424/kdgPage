@@ -69,13 +69,10 @@ plugins:
 nav:
 - Home: index.md
 - 홈: index.ko.md
-- Major: major.md
-- 전공: major.ko.md
-- Work Experience: workexperience.md
-- 주요 경력: workexperience.ko.md
-- Other Information: otherinformation.md
-- 기타 정보: otherinformation.ko.md
-
+- About Me: aboutme.md
+- 소개: aboutme.ko.md
+- Portofolio: major.md
+- 포토폴리오: major.ko.md
 
 - title1:
   - subsection1:
