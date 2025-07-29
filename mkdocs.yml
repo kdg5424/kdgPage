@@ -83,6 +83,8 @@ nav:
   - subsection2:
     - What is OpenFOAM?: OpenFOAM/whatisOpenFOAM.en.md
     - OpenFOAM이란?: OpenFOAM/whatisOpenFOAM.ko.md
+    - blockMesh: OpenFOAM/blockMesh.en.md
+    - blockMesh: OpenFOAM/blockMesh.ko.md
 
 #  - subsection2:
 #  - subsection3:
