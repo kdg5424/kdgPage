@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="ko" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../CFD/SIMPLE.ko/">
+        <link rel="prev" href="../whatisOpenFOAM.en/">
       
-      
-        <link rel="next" href="../blockMesh.ko/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>OpenFOAM이란? - kdg page</title>
+        <title>blockMesh - kdg page</title>
       
     
     
@@ -74,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#openfoam-open-field-operation-and-manipulation" class="md-skip">
-          콘텐츠로 이동
+        <a href="#blockmesh" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -89,7 +87,7 @@
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+  <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="kdg page" class="md-header__button md-logo" aria-label="kdg page" data-md-component="logo">
       
   
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenFOAM이란?
+              blockMesh
             
           </span>
         </div>
@@ -160,20 +158,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="언어설정">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../whatisOpenFOAM.en/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="ko" class="md-select__link">
+            <a href="../blockMesh.ko/" hreflang="ko" class="md-select__link">
               한국어
             </a>
           </li>
@@ -192,21 +190,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="검색">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -217,7 +215,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            검색 초기화
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +229,7 @@
   
     
       
-<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -240,12 +238,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../index.ko/" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
   
-  홈
+  Home
 
       </a>
     </li>
@@ -257,12 +255,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../aboutme.ko/" class="md-tabs__link">
+      <a href="../../aboutme/" class="md-tabs__link">
         
   
     
   
-  소개
+  About Me
 
       </a>
     </li>
@@ -274,12 +272,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../major.ko/" class="md-tabs__link">
+      <a href="../../major/" class="md-tabs__link">
         
   
     
   
-  포토폴리오
+  Portofolio
 
       </a>
     </li>
@@ -303,10 +301,10 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../CFD/whatisCFD.ko/" class="md-tabs__link">
+        <a href="../../CFD/whatisCFD.en/" class="md-tabs__link">
           
   
-  블로그
+  Blogs
 
         </a>
       </li>
@@ -345,7 +343,7 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="kdg page" class="md-nav__button md-logo" aria-label="kdg page" data-md-component="logo">
       
@@ -365,11 +363,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.ko/" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    홈
+    Home
   </span>
   
 
@@ -385,11 +383,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aboutme.ko/" class="md-nav__link">
+      <a href="../../aboutme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    소개
+    About Me
   </span>
   
 
@@ -405,11 +403,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../major.ko/" class="md-nav__link">
+      <a href="../../major/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    포토폴리오
+    Portofolio
   </span>
   
 
@@ -449,7 +447,7 @@
             
   
   <span class="md-ellipsis">
-    블로그
+    Blogs
   </span>
   
 
@@ -459,7 +457,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            블로그
+            Blogs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -486,7 +484,7 @@
         
   
   
-    <a href="../../CFD/whatisCFD.ko/" class="md-nav__link">
+    <a href="../../CFD/whatisCFD.en/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -552,6 +550,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../whatisOpenFOAM.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is OpenFOAM?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -568,7 +587,7 @@
           
   
   <span class="md-ellipsis">
-    OpenFOAM이란?
+    blockMesh
   </span>
   
 
@@ -579,7 +598,7 @@
         
   
   <span class="md-ellipsis">
-    OpenFOAM이란?
+    blockMesh
   </span>
   
 
@@ -587,7 +606,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="목차">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -596,23 +615,23 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      목차
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openfoam" class="md-nav__link">
+  <a href="#what-is-blockmesh" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenFOAM이란?
+      What is blockMesh?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#openfoam_1" class="md-nav__link">
+  <a href="#blockmeshdict" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenFOAM 설치 방법
+      blockMeshDict
     </span>
   </a>
   
@@ -622,27 +641,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../blockMesh.ko/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    blockMesh
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -679,153 +677,303 @@
 
 
 <ul>
-<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../OpenFOAM/whatisOpenFOAM.en/">English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../OpenFOAM/blockMesh.ko/">한국어</a></li>
 </ul>
-<h1 id="openfoam-open-field-operation-and-manipulation">OpenFOAM (Open Field Operation and Manipulation)</h1>
-<h2 id="openfoam">OpenFOAM이란?</h2>
-<p>OpenFOAM은 C++을 이용하여 개발 된 CFD 코드 라이브러리 모음이다.<br>
-이 모음에는 수치 기법, 전처리 / 후처리를 비롯하여 연속체 해석 솔루션등이 포함되어 있다.<br>
-OpenFOAM은 많은 산업 분야를 비롯하여 연구 및 개발에 사용되고 있다.<br>
-OpenFOAM은 일반적으로 아래 3단체에서 개발 및 공개를 하고 있으며, GNU GPL V3에 의거하여 공개되고 있다.<br></p>
-<ul>
-<li>OpenFOAM ESI - ESI Group <a href="https://www.openfoam.com/">OpenFOAM ESI</a></li>
-<li>OpenFOAM org - OpenFOAM Foundation <a href="https://openfoam.org/">OpenFOAM org</a></li>
-<li>FOAM Extended - Wikki <a href="http://wikki.co.uk/index.php/foam-extend/">FOAM extended</a></li>
-</ul>
-<p>이외에도 NEXTFOAM에서 개발, 수정 및 공개하고 있는 NextFOAM 포크도 있다.</p>
-<ul>
-<li>NextFOAM - NEXTFOAM <a href="https://github.com/nextfoam/nextfoam-cfd">NextFOAM</a></li>
-</ul>
-<h2 id="openfoam_1">OpenFOAM 설치 방법</h2>
-<p>OpenFOAM은 기본적으로 Linux 기반에서 작동을 한다. 하여 Linux에서 컴파일 및 빌드를 해야한다.<br>
-그렇다고 Windows에서 OpenFOAM 사용이 불가능 한 것은 아니다. WSL이나 Hyper-V등을 이용한 가상머신을 활용해 OpenFOAM을 설치할 수 있다.<br>
-가상머신은 본인 PC 안에 사용 중인 Windows가 아닌 다른 OS의 머신을 만들 수 있는 플랫폼 내지 시스템을 의미한다.<br>
-이번 게시글에서는 WSL 및 OpenFOAM 설치 방법을 안내한다.</p>
-<p><strong>- Linux나 WSL 모두 구동 및 설치 방법은 동일하다.</strong>
-<strong>- 본 게시글에서는 아래 버전을 기준으로 WSL 및 OpenFOAM 설치 방법을 안내한다.</strong></p>
-<ul>
-<li>Windows : Windows 11</li>
-<li>CPU : intel i5-1135G7 2.40 GHz</li>
-<li>WSL : Ubuntu 24.04</li>
-<li>OpenFOAM : OpenFOAM ESI v2412 (2025년 1월 5일 기준 최신판)</li>
-</ul>
-<h3 id="_1">가상환경 세팅</h3>
-<p>우선, 본인 CPU가 가상화를 지원하는지 확인해야한다. 사실 요즘 나오는 왠만한 intel CPU들은 가상환경을 지원한다.<br>
-그럼에도 불구하고, 가상화를 지원하지 않는 모델이 존재할 수 있으므로 확인 절차를 안내한다.<br></p>
-<p>작업 관리자에서 "성능" 탭 접속을 하면 아래와 같은 화면을 볼 수 있다.<br></p>
-<p><img alt="task manager" src="../../image/taskManager.png" /></p>
-<p>하단에 "가상화 : 사용" 옵션이 있는 것을 볼 수 있다.<br>
-이 때, "사용 안 함"으로 되어 있으면 BIOS로 진입하여 세팅을 설정하면 된다.<br>
-BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로그를 참고하여 진행하면 된다.<br>
-(BIOS 가상화 설정)[<a href="https://m.blog.naver.com/presiddd/222699352932">https://m.blog.naver.com/presiddd/222699352932</a>]</p>
-<p>이 후, windows 기능 켜기/끄기에서 아래 설정들을 체크한다.<br></p>
-<p><img alt="windows functino1" src="../../image/windowsfunction1.png" />  <img alt="windows functino2" src="../../image/windowsfunction2.png" /></p>
-<p><strong>경우에 따라 windows 하이퍼바이저 플랫폼도 체크해야하는 경우가 있다.</strong></p>
-<p>그리고 재부팅을 하면 가상환경 세팅이 완료된다.</p>
-<h3 id="wsl">WSL 설치</h3>
-<p>가상환경 설정이 다 진행되었으면 powershell을 관리자 권한으로 실행한다.<br>
-먼저 아래 명령어를 입력하여 wsl 설치를 진행한다.<br></p>
-<p><code>wsl --install</code></p>
-<p><img alt="powershell wsl" src="../../image/powershellWsl.png" /></p>
-<p>그러면 자동적으로 wsl 설치가 진행된다.<br>
-이후, 아래 명령어를 입력하여 설치 가능한 배포 목록을 확인한다.<br></p>
-<p><code>wsl -l -o</code></p>
-<p><img alt="wsl list" src="../../image/wsllist.png" /></p>
-<p>또한, 아래 링크에서 WSL2 커널을 받아 설치해준다.
-<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 커널</a></p>
-<p>목록에서 현재 본인이 설치하고자 하는 OS가 있는지 확인한다. 참고로 지금은 Ubuntu-24.04를 설치할 예정이다.<br>
-그리고 아래 명령어를 입력하여 Ubuntu-24.04를 설치한다.<br></p>
-<p><code>wsl --install -d Ubuntu-24.04</code></p>
-<p><img alt="Ubuntu-24.04 install" src="../../image/ubuntu24.04install.png" /></p>
-<p>아래 그림과 같이 Ubuntu-24.04 설치가 진행되는 모습을 확인할 수 있다.<br></p>
-<p><img alt="Ubuntu-24.04 install process" src="../../image/ubuntuinstallprocess.png" /></p>
-<p>설치가 완료되면 UNIX 이름 (계정명)과 비밀번호를 입력한다.<br>
-<strong>이 때, 입력하는 계정명과 비밀번호는 잊지 않도록 한다.</strong></p>
-<p><img alt="Ubuntu-24.04" src="../../image/ubuntu24.04.png" /></p>
-<h3 id="openfoam_2">필요 패키지 및 OpenFOAM 설치</h3>
-<p>OpenFOAM을 설치하는 방법은 여러 가지가 있다. Binary run 파일로 설치하는 방법 apt로 설치하는 방법 등 다양하게 OpenFOAM을 설치할 수 있다.<br>
-하지만, 현재 Ubuntu24.04에서는 apt로 OpenFOAM을 설치하는 방법은 아직 없는 것으로 보인다. (25년 1월 5일 기준)<br>
-그리고 OpenFOAM 소스 코드를 직접 수정해서 사용할 누군가를 위해서 소스 코드를 컴파일 하는 방식으로 안내한다.<br></p>
-<h4 id="1">1) 필요 패키지 설치</h4>
-<p>OpenFOAM을 컴파일 하기 위해 몇 가지 필요한 패키지 및 소프트웨어들이 있다.<br>
-openmpi, gcc 등 몇 가지를 설치해야한다.<br></p>
-<p>우선 아래 명령어를 입력해 apt-get을 업데이트하고, 필요 패키지들을 설치한다.<br></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get install -y build-essential flex zlib1g-dev libgmp-dev libmpfr-dev texinfo cmake
+<h1 id="blockmesh">🧩 blockMesh</h1>
+<h2 id="what-is-blockmesh">What is blockMesh?</h2>
+<p>In this article, we will explore <strong>blockMesh</strong>, the most fundamental meshing utility in OpenFOAM.</p>
+<p>In CFD, the mesh is a core component that directly influences both <strong>accuracy</strong> and <strong>computational efficiency</strong>.<br />
+OpenFOAM provides several meshing tools such as <strong>blockMesh</strong> and <strong>snappyHexMesh</strong>.<br />
+Among them, blockMesh is used to generate <strong>structured hexahedral meshes</strong> and is well-suited for simple geometries.<br />
+However, once the geometry becomes even slightly complex, blockMesh quickly becomes impractical due to its limitations.<br />
+For such cases, OpenFOAM provides another utility called <strong>snappyHexMesh</strong>, which we will cover in a future post.</p>
+<hr />
+<h2 id="blockmeshdict">blockMeshDict</h2>
+<p>To use blockMesh, you must define a file named <code>blockMeshDict</code>, located in the <code>system</code> directory.<br />
+The example below is the <code>blockMeshDict</code> file from the <code>cavity</code> tutorial of OpenFOAM-v2412's <code>icoFoam</code> case.</p>
+<div class="highlight"><pre><span></span><code>/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale   0.1;
+
+vertices
+(
+    (0 0 0) //vertex number 0
+    (1 0 0) //vertex number 1
+    (1 1 0) //vertex number 2
+    (0 1 0) //vertex number 3
+    (0 0 0.1) //vertex number 4
+    (1 0 0.1) //vertex number 5
+    (1 1 0.1) //vertex number 6
+    (0 1 0.1) //vertex number 7
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (20 20 1) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    movingWall
+    {
+        type wall;
+        faces
+        (
+            (3 7 6 2)
+        );
+    }
+    fixedWalls
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+        );
+    }
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+);
+
+
+// ************************************************************************* //
 </code></pre></div>
-<p><img alt="apt-get update" src="../../image/aptgetupdate.png" /></p>
-<p><img alt="apt-get install" src="../../image/aptgetinstall.png" /></p>
-<p>이후, openmpi를 설치한다. openmpi는 node간 통신을 위해 개발된 소프트웨어로 openmp의 기능도 포함하고 있어 core간 통신도 가능하게 한다.<br>
-ESI에서는 현재 openmpi 2와 3의 특정 버전에서 know issue가 있으므로 최소 권장 사항을 지정하고 있다.<br>
-하지만 openpmi 2와 3은 옛날 버전의 mpi로 현재는 openmpi 4 혹은 5가 있다. 필자는 openmpi 5는 아직 테스트를 하지 않아 (분명 아직 불안정할 것이라고 추측된다.) openmpi 4.1.6으로 설치한다.<br>
-아래 명령어를 입력해 openmpi 4.1.6의 소스코드를 다운로드 받는다.<br></p>
-<p><code>wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz</code></p>
-<p>이후 받은 압축 파일을 공유 폴더인 /opt로 옮겨준다.<br></p>
-<p><code>sudo cp ./openmpi-4.1.6.tar.gz /opt</code></p>
-<p>그리고 관리자 계정으로 접속하여 관리자의 계정 폴더로 이동한다.<br></p>
-<div class="highlight"><pre><span></span><code>sudo su
-cd
+<h3 id="blockmeshdict-structure-header">blockMeshDict Structure (Header)</h3>
+<div class="highlight"><pre><span></span><code>/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 </code></pre></div>
-<p>이 위치로 tar 파일을 복사하고 압축해제 한다.<br></p>
-<div class="highlight"><pre><span></span><code>cp /opt/openmpi-4.1.6.tar.gz .
-tar zxf openmpi-4.1.6.tar.gz
+<p>This section is the <strong>header</strong>, which defines the type and class of the dictionary file.</p>
+<hr />
+<h3 id="blockmeshdict-structure-scale-vertices">blockMeshDict Structure (scale &amp; vertices)</h3>
+<div class="highlight"><pre><span></span><code>scale   0.1;
+
+vertices
+(
+    (0 0 0)
+    (1 0 0)
+    (1 1 0)
+    (0 1 0)
+    (0 0 0.1)
+    (1 0 0.1)
+    (1 1 0.1)
+    (0 1 0.1)
+);
 </code></pre></div>
-<p><img alt="mpi installation" src="../../image/mpiinstallation%281%29.png" /></p>
-<p>압축 해제한 폴더로 이동하여 openmpi 소스코드를 컴파일 한다.</p>
-<div class="highlight"><pre><span></span><code>cd openmpi-4.1.6
-./configure --prefix=/opt/openmpi-4.1.6
-make -j 4 all
-make install
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scale</code></td>
+<td>Sets the scale factor for the geometry</td>
+<td><code>0.001</code> = mm (default is meters)</td>
+</tr>
+<tr>
+<td><code>vertices</code></td>
+<td>List of coordinate points used to define blocks</td>
+<td><code>(0 0 0)</code></td>
+</tr>
+</tbody>
+</table>
+<p>These 8 vertices define the corners of the mesh.<br />
+Each point is numbered in order from top to bottom, vertex 0 to vertex 7.</p>
+<p><img alt="block" src="../../image/blockMesh.png" /></p>
+<hr />
+<h3 id="blockmeshdict-structure-blocks">blockMeshDict Structure (blocks)</h3>
+<div class="highlight"><pre><span></span><code>blocks
+(
+    hex (0 1 2 3 4 5 6 7) (20 20 1) simpleGrading (1 1 1)
+);
 </code></pre></div>
-<p>그리고 전역 환경 및 bash shell에 openmpi 경로를 설정한다.<br></p>
-<div class="highlight"><pre><span></span><code>echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; &gt;&gt; /etc/bash.bashrc
-source /etc/bash.bashrc
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hex (0~7)</code></td>
+<td>Set of vertex numbers defining the hexahedral block</td>
+</tr>
+<tr>
+<td><code>(20 20 1)</code></td>
+<td>Number of cells in x, y, z directions</td>
+</tr>
+<tr>
+<td><code>simpleGrading(1 1 1)</code></td>
+<td>Expansion ratio in each direction</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>blocks</code> section defines how the mesh is subdivided.<br />
+It includes a list of vertex indices, cell counts per direction, and optional grading information.</p>
+<p><img alt="expansion ratio" src="../../image/expansion%20ratio.png" /></p>
+<hr />
+<h3 id="blockmeshdict-structure-boundary">blockMeshDict Structure (boundary)</h3>
+<div class="highlight"><pre><span></span><code>boundary
+(
+    movingWall
+    {
+        type wall;
+        faces
+        (
+            (3 7 6 2)
+        );
+    }
+    fixedWalls
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+        );
+    }
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+)
 </code></pre></div>
-<p>이후 아래 명령어를 입력하여 openmpi-4.1.6이 정상적으로 설치되었음을 확인한다.<br></p>
-<p><code>mpirun -V</code></p>
-<p><img alt="mpi check" src="../../image/mpirun.png" /></p>
-<p>다음으로 OpenFOAM을 컴파일한다.<br>
-OpenFOAM은 ESI의 v2412 버전을 컴파일한다.<br>
-v2306에서 gcc11과 gcc13으로 컴파일이 되지 않는 문제가 발생하였고, 이 문제는 아직 해결되지 않은 것으로 보인다.<br>
-그래서 gcc9 버전을 설치한다.<br>
-아래 명령어를 입력해 gcc9 버전을 설치한다.<br></p>
-<p><strong>gcc의 문제가 아닌 필자 노트북의 메모리 부족으로 인해 발생한 문제이다. 그래서 gcc 13으로 진행해도 문제 없다.</strong></p>
-<p><div class="highlight"><pre><span></span><code>apt install gcc-9 g++-9
+<p>The <code>boundary</code> section defines the mesh boundaries using combinations of vertices.<br />
+Each boundary is made up of 4-point faces (quadrilaterals).<br />
+For example, <code>movingWall</code> uses vertices 3, 7, 6, and 2.</p>
+<hr />
+<h3 id="generating-the-mesh-with-blockmesh">Generating the Mesh with blockMesh</h3>
+<p>To generate the mesh, simply run the following command in your case directory:</p>
+<div class="highlight"><pre><span></span><code>blockMesh
 </code></pre></div>
-이후, 기본으로 설정되어 있는 gcc 버전을 9로 바꾼다.<br></p>
-<div class="highlight"><pre><span></span><code>update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 10
-update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 10
-sudo update-alternatives --config gcc
-sudo update-alternatives --config g++
+<p>Upon execution, you will see a log output similar to the one below:</p>
+<div class="highlight"><pre><span></span><code>kdg@LAPTOP-0HV9Q2LJ:~/OpenFOAM/kdg-v2412/run/cavity$ blockMesh
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _8dbc61e11c-20241220 OPENFOAM=2412 version=v2412
+Arch   : &quot;LSB;label=32;scalar=64&quot;
+Exec   : blockMesh
+Date   : Jul 29 2025
+Time   : 19:30:09
+Host   : LAPTOP-0HV9Q2LJ
+PID    : 977
+I/O    : uncollated
+Case   : /home/kdg/OpenFOAM/kdg-v2412/run/cavity
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from &quot;system/blockMeshDict&quot;
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+
+Creating topology patches - from boundary section
+
+Creating block mesh topology - scaling/transform applied later
+
+Check topology
+
+        Basic statistics
+                Number of internal faces : 0
+                Number of boundary faces : 6
+                Number of defined boundary faces : 6
+                Number of undefined boundary faces : 0
+        Checking patch -&gt; block consistency
+
+Creating block offsets
+Creating merge list (topological search)...
+Deleting polyMesh directory &quot;constant/polyMesh&quot;
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale (0.1 0.1 0.1)
+    Block 0 cell size :
+        i : 0.005 .. 0.005
+        j : 0.005 .. 0.005
+        k : 0.01 .. 0.01
+
+No patch pairs to merge
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (0.1 0.1 0.01)
+  nPoints: 882
+  nCells: 400
+  nFaces: 1640
+  nInternalFaces: 760
+----------------
+Patches
+----------------
+  patch 0 (start: 760 size: 20) name: movingWall
+  patch 1 (start: 780 size: 60) name: fixedWalls
+  patch 2 (start: 840 size: 800) name: frontAndBack
+
+End
 </code></pre></div>
-<p><img alt="gcc version" src="../../image/gcc.png" /></p>
-<p>gcc 버전을 9로 변경하였으면 OpenFOAM 소스 코드를 다운로드 받는다.<br></p>
-<div class="highlight"><pre><span></span><code>wget https://dl.openfoam.com/source/v2412/OpenFOAM-v2412.tgz
-wget https://dl.openfoam.com/source/v2412/ThirdParty-v2412.tgz
-tar -xvzf OpenFOAM-v2412.tgz
-tar -xzvf ThirdParty-v2412.tgz
-mkdir -p /opt/OpenFOAM
-mv OpenFOAM-v2412 /opt/OpenFOAM
-mv ThirdParty-v2412 /opt/OpenFOAM
-</code></pre></div>
-<p><img alt="opt directory" src="../../image/opt.png" /></p>
-<p>OpenFOAM-v2412 폴더로 이동하고 Allwmake를 실행하여 OpenFOAM을 컴파일한다.<br>
-이 때, ThirdParty도 같이 컴파일된다.</p>
-<div class="highlight"><pre><span></span><code>cd OpenFOAM-v2412
-source ./etc/bashrc
-./Allwmake -j 4 all
-</code></pre></div>
-<p><img alt="OpenFOAM Compile" src="../../image/openfoamcompile.png" /></p>
-<p>설치가 전부 진행되면 아래 명령어를 입력해 /etc/bash.bashrc에 OpenFOAM 환경 변수를 추가하자.<br>
-이렇게 하면 앞으로 터미널에 of24만 입력하고도 OpenFOAM을 실행할 수 있다.<br></p>
-<div class="highlight"><pre><span></span><code>echo &quot;alias of24=&#39;. /opt/OpenFOAM/OpenFOAM-v2412/etc/bashrc&#39;&quot; &gt;&gt; /etc/bash.bashrc
-</code></pre></div>
-<p>설치가 전부 진행된 줄 알고 예제를 실행하다 보니 pimpleFoam, simpleFoam등 기본적인 binary 파일이 실행되지 않는 것이다.<br></p>
-<p><img alt="pimpleFoam missing" src="../../image/pimpleFoamError.png" /></p>
-<p>이상한 생각이 들어 $FOAM_APPBIN으로 가봤더니, 이게 왠걸 솔버들이 전혀 컴파일 되지 않았다. 하여, solvers 폴더는 직접 다시 ./Allwmake를 실행하여 컴파일 하였다.<br></p>
-<p><img alt="OpenFOAM binary" src="../../image/openfoambinary.png" /></p>
-<p>그 후, 다시 pitzDaily 예제를 돌렸더니 정상적으로 잘 돌아가는 모습이다.<br></p>
-<p><img alt="pitzDaily" src="../../image/pitzDaily.png" /></p>
+<p>This confirms that the mesh was successfully generated.</p>
+<p><img alt="cavity mesh" src="../../image/cavityMesh.png" /></p>
 
 
 
@@ -851,7 +999,7 @@ source ./etc/bashrc
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  맨위로
+  Back to top
 </button>
         
       </main>
@@ -880,7 +1028,7 @@ source ./etc/bashrc
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>

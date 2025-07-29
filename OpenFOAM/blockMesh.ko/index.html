@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../CFD/SIMPLE.ko/">
+        <link rel="prev" href="../whatisOpenFOAM.ko/">
       
-      
-        <link rel="next" href="../blockMesh.ko/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>OpenFOAM이란? - kdg page</title>
+        <title>blockMesh - kdg page</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openfoam-open-field-operation-and-manipulation" class="md-skip">
+        <a href="#blockmesh" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenFOAM이란?
+              blockMesh
             
           </span>
         </div>
@@ -167,7 +165,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../whatisOpenFOAM.en/" hreflang="en" class="md-select__link">
+            <a href="../blockMesh.en/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -552,6 +550,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../whatisOpenFOAM.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenFOAM이란?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -568,7 +587,7 @@
           
   
   <span class="md-ellipsis">
-    OpenFOAM이란?
+    blockMesh
   </span>
   
 
@@ -579,7 +598,7 @@
         
   
   <span class="md-ellipsis">
-    OpenFOAM이란?
+    blockMesh
   </span>
   
 
@@ -601,18 +620,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openfoam" class="md-nav__link">
+  <a href="#blockmesh_1" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenFOAM이란?
+      blockMesh란?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#openfoam_1" class="md-nav__link">
+  <a href="#blockmeshdict" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenFOAM 설치 방법
+      blockMeshDict
     </span>
   </a>
   
@@ -622,27 +641,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../blockMesh.ko/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    blockMesh
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -679,153 +677,283 @@
 
 
 <ul>
-<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../OpenFOAM/whatisOpenFOAM.en/">English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../OpenFOAM/blockMesh.en/">English</a></li>
 </ul>
-<h1 id="openfoam-open-field-operation-and-manipulation">OpenFOAM (Open Field Operation and Manipulation)</h1>
-<h2 id="openfoam">OpenFOAM이란?</h2>
-<p>OpenFOAM은 C++을 이용하여 개발 된 CFD 코드 라이브러리 모음이다.<br>
-이 모음에는 수치 기법, 전처리 / 후처리를 비롯하여 연속체 해석 솔루션등이 포함되어 있다.<br>
-OpenFOAM은 많은 산업 분야를 비롯하여 연구 및 개발에 사용되고 있다.<br>
-OpenFOAM은 일반적으로 아래 3단체에서 개발 및 공개를 하고 있으며, GNU GPL V3에 의거하여 공개되고 있다.<br></p>
-<ul>
-<li>OpenFOAM ESI - ESI Group <a href="https://www.openfoam.com/">OpenFOAM ESI</a></li>
-<li>OpenFOAM org - OpenFOAM Foundation <a href="https://openfoam.org/">OpenFOAM org</a></li>
-<li>FOAM Extended - Wikki <a href="http://wikki.co.uk/index.php/foam-extend/">FOAM extended</a></li>
-</ul>
-<p>이외에도 NEXTFOAM에서 개발, 수정 및 공개하고 있는 NextFOAM 포크도 있다.</p>
-<ul>
-<li>NextFOAM - NEXTFOAM <a href="https://github.com/nextfoam/nextfoam-cfd">NextFOAM</a></li>
-</ul>
-<h2 id="openfoam_1">OpenFOAM 설치 방법</h2>
-<p>OpenFOAM은 기본적으로 Linux 기반에서 작동을 한다. 하여 Linux에서 컴파일 및 빌드를 해야한다.<br>
-그렇다고 Windows에서 OpenFOAM 사용이 불가능 한 것은 아니다. WSL이나 Hyper-V등을 이용한 가상머신을 활용해 OpenFOAM을 설치할 수 있다.<br>
-가상머신은 본인 PC 안에 사용 중인 Windows가 아닌 다른 OS의 머신을 만들 수 있는 플랫폼 내지 시스템을 의미한다.<br>
-이번 게시글에서는 WSL 및 OpenFOAM 설치 방법을 안내한다.</p>
-<p><strong>- Linux나 WSL 모두 구동 및 설치 방법은 동일하다.</strong>
-<strong>- 본 게시글에서는 아래 버전을 기준으로 WSL 및 OpenFOAM 설치 방법을 안내한다.</strong></p>
-<ul>
-<li>Windows : Windows 11</li>
-<li>CPU : intel i5-1135G7 2.40 GHz</li>
-<li>WSL : Ubuntu 24.04</li>
-<li>OpenFOAM : OpenFOAM ESI v2412 (2025년 1월 5일 기준 최신판)</li>
-</ul>
-<h3 id="_1">가상환경 세팅</h3>
-<p>우선, 본인 CPU가 가상화를 지원하는지 확인해야한다. 사실 요즘 나오는 왠만한 intel CPU들은 가상환경을 지원한다.<br>
-그럼에도 불구하고, 가상화를 지원하지 않는 모델이 존재할 수 있으므로 확인 절차를 안내한다.<br></p>
-<p>작업 관리자에서 "성능" 탭 접속을 하면 아래와 같은 화면을 볼 수 있다.<br></p>
-<p><img alt="task manager" src="../../image/taskManager.png" /></p>
-<p>하단에 "가상화 : 사용" 옵션이 있는 것을 볼 수 있다.<br>
-이 때, "사용 안 함"으로 되어 있으면 BIOS로 진입하여 세팅을 설정하면 된다.<br>
-BIOS 진입 후, CPU 가상화 환경 설정에 대한 안내는 아래 블로그를 참고하여 진행하면 된다.<br>
-(BIOS 가상화 설정)[<a href="https://m.blog.naver.com/presiddd/222699352932">https://m.blog.naver.com/presiddd/222699352932</a>]</p>
-<p>이 후, windows 기능 켜기/끄기에서 아래 설정들을 체크한다.<br></p>
-<p><img alt="windows functino1" src="../../image/windowsfunction1.png" />  <img alt="windows functino2" src="../../image/windowsfunction2.png" /></p>
-<p><strong>경우에 따라 windows 하이퍼바이저 플랫폼도 체크해야하는 경우가 있다.</strong></p>
-<p>그리고 재부팅을 하면 가상환경 세팅이 완료된다.</p>
-<h3 id="wsl">WSL 설치</h3>
-<p>가상환경 설정이 다 진행되었으면 powershell을 관리자 권한으로 실행한다.<br>
-먼저 아래 명령어를 입력하여 wsl 설치를 진행한다.<br></p>
-<p><code>wsl --install</code></p>
-<p><img alt="powershell wsl" src="../../image/powershellWsl.png" /></p>
-<p>그러면 자동적으로 wsl 설치가 진행된다.<br>
-이후, 아래 명령어를 입력하여 설치 가능한 배포 목록을 확인한다.<br></p>
-<p><code>wsl -l -o</code></p>
-<p><img alt="wsl list" src="../../image/wsllist.png" /></p>
-<p>또한, 아래 링크에서 WSL2 커널을 받아 설치해준다.
-<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 커널</a></p>
-<p>목록에서 현재 본인이 설치하고자 하는 OS가 있는지 확인한다. 참고로 지금은 Ubuntu-24.04를 설치할 예정이다.<br>
-그리고 아래 명령어를 입력하여 Ubuntu-24.04를 설치한다.<br></p>
-<p><code>wsl --install -d Ubuntu-24.04</code></p>
-<p><img alt="Ubuntu-24.04 install" src="../../image/ubuntu24.04install.png" /></p>
-<p>아래 그림과 같이 Ubuntu-24.04 설치가 진행되는 모습을 확인할 수 있다.<br></p>
-<p><img alt="Ubuntu-24.04 install process" src="../../image/ubuntuinstallprocess.png" /></p>
-<p>설치가 완료되면 UNIX 이름 (계정명)과 비밀번호를 입력한다.<br>
-<strong>이 때, 입력하는 계정명과 비밀번호는 잊지 않도록 한다.</strong></p>
-<p><img alt="Ubuntu-24.04" src="../../image/ubuntu24.04.png" /></p>
-<h3 id="openfoam_2">필요 패키지 및 OpenFOAM 설치</h3>
-<p>OpenFOAM을 설치하는 방법은 여러 가지가 있다. Binary run 파일로 설치하는 방법 apt로 설치하는 방법 등 다양하게 OpenFOAM을 설치할 수 있다.<br>
-하지만, 현재 Ubuntu24.04에서는 apt로 OpenFOAM을 설치하는 방법은 아직 없는 것으로 보인다. (25년 1월 5일 기준)<br>
-그리고 OpenFOAM 소스 코드를 직접 수정해서 사용할 누군가를 위해서 소스 코드를 컴파일 하는 방식으로 안내한다.<br></p>
-<h4 id="1">1) 필요 패키지 설치</h4>
-<p>OpenFOAM을 컴파일 하기 위해 몇 가지 필요한 패키지 및 소프트웨어들이 있다.<br>
-openmpi, gcc 등 몇 가지를 설치해야한다.<br></p>
-<p>우선 아래 명령어를 입력해 apt-get을 업데이트하고, 필요 패키지들을 설치한다.<br></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get install -y build-essential flex zlib1g-dev libgmp-dev libmpfr-dev texinfo cmake
+<h1 id="blockmesh">🧩 blockMesh</h1>
+<h2 id="blockmesh_1">blockMesh란?</h2>
+<p>이번 시간에는 OpenFOAM의 격자 유틸리티 중 가장 기본적인 유틸리티인 blockMesh에 대해 알아볼 예정이다.<br></p>
+<p>CFD 해석에서 격자는 해석 정확도와 연산 효율을 결정하는 핵심 요소이다.<br>
+OpenFOAM은 blockMesh, snappyHexMesh와 같은 격자 생성 유틸리티를 가지고 있다.<br>
+이 때, blockMesh는 정육면체 정렬 격자 (Structure Mesh) 생성을 지원하고 단순한 형상에서 빠른 격자 생성을 지원한다.<br>
+하지만 형상이 조금만 복잡해져도 사실상 격자를 생성하기 어렵다는 치명적인 <strong>단점**을 가지고 있다.<br>
+그래서 OpenFOAM은 복잡한 형상에서 격자 생성을 위한 **snappyHexMesh</strong> 유틸리티를 제공하고 있다. 이 유틸리티에 대해서는 다음 시간에 알아보도록 하자.<br></p>
+<h2 id="blockmeshdict">blockMeshDict</h2>
+<p>blockMesh를 만들기 위해서는 blockMeshDict를 생성해야 한다.<br>
+blockMeshDict를 system 폴더 밑에 위치하며, 내용은 아래와 같다.<br>
+참고로 아래 blockMeshDict는 OpenFOAM-V2412의 icoFoam에 있는 cavity라는 예제의 blockMeshDict이다.<br></p>
+<div class="highlight"><pre><span></span><code>/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale   0.1;
+
+vertices
+(
+    (0 0 0) //vertex number 0
+    (1 0 0) //vertex number 1
+    (1 1 0) //vertex number 2
+    (0 1 0) //vertex number 3
+    (0 0 0.1) //vertex number 4
+    (1 0 0.1) //vertex number 5
+    (1 1 0.1) //vertex number 6
+    (0 1 0.1) //vertex number 7
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (20 20 1) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    movingWall
+    {
+        type wall;
+        faces
+        (
+            (3 7 6 2)
+        );
+    }
+    fixedWalls
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+        );
+    }
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+);
+
+
+// ************************************************************************* //
 </code></pre></div>
-<p><img alt="apt-get update" src="../../image/aptgetupdate.png" /></p>
-<p><img alt="apt-get install" src="../../image/aptgetinstall.png" /></p>
-<p>이후, openmpi를 설치한다. openmpi는 node간 통신을 위해 개발된 소프트웨어로 openmp의 기능도 포함하고 있어 core간 통신도 가능하게 한다.<br>
-ESI에서는 현재 openmpi 2와 3의 특정 버전에서 know issue가 있으므로 최소 권장 사항을 지정하고 있다.<br>
-하지만 openpmi 2와 3은 옛날 버전의 mpi로 현재는 openmpi 4 혹은 5가 있다. 필자는 openmpi 5는 아직 테스트를 하지 않아 (분명 아직 불안정할 것이라고 추측된다.) openmpi 4.1.6으로 설치한다.<br>
-아래 명령어를 입력해 openmpi 4.1.6의 소스코드를 다운로드 받는다.<br></p>
-<p><code>wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz</code></p>
-<p>이후 받은 압축 파일을 공유 폴더인 /opt로 옮겨준다.<br></p>
-<p><code>sudo cp ./openmpi-4.1.6.tar.gz /opt</code></p>
-<p>그리고 관리자 계정으로 접속하여 관리자의 계정 폴더로 이동한다.<br></p>
-<div class="highlight"><pre><span></span><code>sudo su
-cd
+<h3 id="blockmeshdict_1">blockMeshDict 구조 (헤더)</h3>
+<p><div class="highlight"><pre><span></span><code>/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 </code></pre></div>
-<p>이 위치로 tar 파일을 복사하고 압축해제 한다.<br></p>
-<div class="highlight"><pre><span></span><code>cp /opt/openmpi-4.1.6.tar.gz .
-tar zxf openmpi-4.1.6.tar.gz
+위 내용은 헤더이다. dictonary 파일 형식과 종류에 대해 지정한다.<br></p>
+<h3 id="blockmeshdict-scale-vertices">blockMeshDict 구조 (scale &amp; vertices)</h3>
+<div class="highlight"><pre><span></span><code>scale   0.1;
+
+vertices
+(
+    (0 0 0)
+    (1 0 0)
+    (1 1 0)
+    (0 1 0)
+    (0 0 0.1)
+    (1 0 0.1)
+    (1 1 0.1)
+    (0 1 0.1)
+);
 </code></pre></div>
-<p><img alt="mpi installation" src="../../image/mpiinstallation%281%29.png" /></p>
-<p>압축 해제한 폴더로 이동하여 openmpi 소스코드를 컴파일 한다.</p>
-<div class="highlight"><pre><span></span><code>cd openmpi-4.1.6
-./configure --prefix=/opt/openmpi-4.1.6
-make -j 4 all
-make install
+<table>
+<thead>
+<tr>
+<th>키워드</th>
+<th>설명</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scale</td>
+<td>격자의 크기 (scale)을 지정해주는 요소(factor)이다.</td>
+<td>0.001은 mm 단위로 변환해준다. (OpenFOAM의 길이 기본 단위는 m이다.)</td>
+</tr>
+<tr>
+<td>vertices</td>
+<td>점 (vertex)들의 집합(List)이다.</td>
+<td>(0 0 0)</td>
+</tr>
+</tbody>
+</table>
+<p>즉, 위 내용은 0.1로 scale을 진행하며 (0, 0, 0)부터 (0, 1, 0.1) 총 8개의 점들로 blockMesh를 생성한다는 의미이다.<br>
+이 때, 맨 위에서부터 차례대로 vertex 0번부터 7번까지 총 8개의 vertex로 이루어져 있다. (아래 그림을 참고하면 된다.) <br></p>
+<p><img alt="block" src="../../image/blockMesh.png" /></p>
+<h3 id="blockmeshdict-blocks">blockMeshDict 구조 (blocks)</h3>
+<p><div class="highlight"><pre><span></span><code>blocks
+(
+    hex (0 1 2 3 4 5 6 7) (20 20 1) simpleGrading (1 1 1)
+);
 </code></pre></div>
-<p>그리고 전역 환경 및 bash shell에 openmpi 경로를 설정한다.<br></p>
-<div class="highlight"><pre><span></span><code>echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; &gt;&gt; /etc/bash.bashrc
-source /etc/bash.bashrc
+| 키워드       | 설명       |
+|-----------|-----------|
+| hex (0~7)  | block을 구성하는 vertice들의 집합이다.
+| (20 20 1)  | 각 방향 별 격자 수를 나타낸다.  |
+| simpleGrading(1 1 1)  | 각 방향 별 격자의 비율을 나타낸다.  |</p>
+<p>block 정의는 blocks이라는 이름의 목록에 포함된다.<br>
+이 때, vertice들의 목록 (번호), 각 방향 별 격자 수, 각 방향의 셀 비율을 나타내는 목록으로 구성된다.<br></p>
+<p><img alt="expansion ratio" src="../../image/expansion%20ratio.png" /></p>
+<h3 id="blockmeshdict-boundary">blockMeshDict 구조 (boundary)</h3>
+<div class="highlight"><pre><span></span><code>boundary
+(
+    movingWall
+    {
+        type wall;
+        faces
+        (
+            (3 7 6 2)
+        );
+    }
+    fixedWalls
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+        );
+    }
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+)
 </code></pre></div>
-<p>이후 아래 명령어를 입력하여 openmpi-4.1.6이 정상적으로 설치되었음을 확인한다.<br></p>
-<p><code>mpirun -V</code></p>
-<p><img alt="mpi check" src="../../image/mpirun.png" /></p>
-<p>다음으로 OpenFOAM을 컴파일한다.<br>
-OpenFOAM은 ESI의 v2412 버전을 컴파일한다.<br>
-v2306에서 gcc11과 gcc13으로 컴파일이 되지 않는 문제가 발생하였고, 이 문제는 아직 해결되지 않은 것으로 보인다.<br>
-그래서 gcc9 버전을 설치한다.<br>
-아래 명령어를 입력해 gcc9 버전을 설치한다.<br></p>
-<p><strong>gcc의 문제가 아닌 필자 노트북의 메모리 부족으로 인해 발생한 문제이다. 그래서 gcc 13으로 진행해도 문제 없다.</strong></p>
-<p><div class="highlight"><pre><span></span><code>apt install gcc-9 g++-9
+<p>마지막으로 boundary들이다.<br>
+boundary들은 vertice들의 조합으로 vertice 4개를 조합시켜 하나의 사각형 형태 혹은 3개를 조합시켜 삼각형 형태로 경계면을 정의할 수 있다.<br>
+대표적으로 movingWall이라는 경계면은 vertice 3, 7, 6, 2번을 조합하였다.<br></p>
+<h3 id="blockmesh_2">blockMesh 생성</h3>
+<p>blockMesh 생성 방법은 간단하다.<br>
+Working directory에서 blockMesh 명령어를 입력하면 격자가 자동으로 생성된다.<br></p>
+<div class="highlight"><pre><span></span><code>blockMesh
 </code></pre></div>
-이후, 기본으로 설정되어 있는 gcc 버전을 9로 바꾼다.<br></p>
-<div class="highlight"><pre><span></span><code>update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 10
-update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 10
-sudo update-alternatives --config gcc
-sudo update-alternatives --config g++
+<p>그러면 아래와 같이 로그가 나오면서, 격자 생성이 완료된다.<br></p>
+<div class="highlight"><pre><span></span><code>kdg@LAPTOP-0HV9Q2LJ:~/OpenFOAM/kdg-v2412/run/cavity$ blockMesh
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _8dbc61e11c-20241220 OPENFOAM=2412 version=v2412
+Arch   : &quot;LSB;label=32;scalar=64&quot;
+Exec   : blockMesh
+Date   : Jul 29 2025
+Time   : 19:30:09
+Host   : LAPTOP-0HV9Q2LJ
+PID    : 977
+I/O    : uncollated
+Case   : /home/kdg/OpenFOAM/kdg-v2412/run/cavity
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from &quot;system/blockMeshDict&quot;
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+
+Creating topology patches - from boundary section
+
+Creating block mesh topology - scaling/transform applied later
+
+Check topology
+
+        Basic statistics
+                Number of internal faces : 0
+                Number of boundary faces : 6
+                Number of defined boundary faces : 6
+                Number of undefined boundary faces : 0
+        Checking patch -&gt; block consistency
+
+Creating block offsets
+Creating merge list (topological search)...
+Deleting polyMesh directory &quot;constant/polyMesh&quot;
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale (0.1 0.1 0.1)
+    Block 0 cell size :
+        i : 0.005 .. 0.005
+        j : 0.005 .. 0.005
+        k : 0.01 .. 0.01
+
+No patch pairs to merge
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (0.1 0.1 0.01)
+  nPoints: 882
+  nCells: 400
+  nFaces: 1640
+  nInternalFaces: 760
+----------------
+Patches
+----------------
+  patch 0 (start: 760 size: 20) name: movingWall
+  patch 1 (start: 780 size: 60) name: fixedWalls
+  patch 2 (start: 840 size: 800) name: frontAndBack
+
+End
 </code></pre></div>
-<p><img alt="gcc version" src="../../image/gcc.png" /></p>
-<p>gcc 버전을 9로 변경하였으면 OpenFOAM 소스 코드를 다운로드 받는다.<br></p>
-<div class="highlight"><pre><span></span><code>wget https://dl.openfoam.com/source/v2412/OpenFOAM-v2412.tgz
-wget https://dl.openfoam.com/source/v2412/ThirdParty-v2412.tgz
-tar -xvzf OpenFOAM-v2412.tgz
-tar -xzvf ThirdParty-v2412.tgz
-mkdir -p /opt/OpenFOAM
-mv OpenFOAM-v2412 /opt/OpenFOAM
-mv ThirdParty-v2412 /opt/OpenFOAM
-</code></pre></div>
-<p><img alt="opt directory" src="../../image/opt.png" /></p>
-<p>OpenFOAM-v2412 폴더로 이동하고 Allwmake를 실행하여 OpenFOAM을 컴파일한다.<br>
-이 때, ThirdParty도 같이 컴파일된다.</p>
-<div class="highlight"><pre><span></span><code>cd OpenFOAM-v2412
-source ./etc/bashrc
-./Allwmake -j 4 all
-</code></pre></div>
-<p><img alt="OpenFOAM Compile" src="../../image/openfoamcompile.png" /></p>
-<p>설치가 전부 진행되면 아래 명령어를 입력해 /etc/bash.bashrc에 OpenFOAM 환경 변수를 추가하자.<br>
-이렇게 하면 앞으로 터미널에 of24만 입력하고도 OpenFOAM을 실행할 수 있다.<br></p>
-<div class="highlight"><pre><span></span><code>echo &quot;alias of24=&#39;. /opt/OpenFOAM/OpenFOAM-v2412/etc/bashrc&#39;&quot; &gt;&gt; /etc/bash.bashrc
-</code></pre></div>
-<p>설치가 전부 진행된 줄 알고 예제를 실행하다 보니 pimpleFoam, simpleFoam등 기본적인 binary 파일이 실행되지 않는 것이다.<br></p>
-<p><img alt="pimpleFoam missing" src="../../image/pimpleFoamError.png" /></p>
-<p>이상한 생각이 들어 $FOAM_APPBIN으로 가봤더니, 이게 왠걸 솔버들이 전혀 컴파일 되지 않았다. 하여, solvers 폴더는 직접 다시 ./Allwmake를 실행하여 컴파일 하였다.<br></p>
-<p><img alt="OpenFOAM binary" src="../../image/openfoambinary.png" /></p>
-<p>그 후, 다시 pitzDaily 예제를 돌렸더니 정상적으로 잘 돌아가는 모습이다.<br></p>
-<p><img alt="pitzDaily" src="../../image/pitzDaily.png" /></p>
+<p>그러면 아래와 같이 격자가 생성된 것을 확인할 수 있다.<br></p>
+<p><img alt="cavity mesh" src="../../image/cavityMesh.png" /></p>
 
 
 
