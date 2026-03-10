@@ -85,6 +85,8 @@ nav:
     - OpenFOAM이란?: OpenFOAM/whatisOpenFOAM.ko.md
     - blockMesh: OpenFOAM/blockMesh.en.md
     - blockMesh: OpenFOAM/blockMesh.ko.md
+    - OpenFOAM Folder Structure: OpenFOAM/OpenFOAMStructure.en.md
+    - OpenFOAM 폴더 구조: OpenFOAM/OpenFOAMStructure.ko.md
 
 #  - subsection2:
 #  - subsection3:

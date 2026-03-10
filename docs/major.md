@@ -41,8 +41,13 @@
 ---
 
 ## 💼 **Professional Experience**
+### ✅ KOSTECH (OCT 2025 ~ Present)
+**Key Responsibilities**:
+- Developed **CFD simulation models** using Ansys Fluent, CFX and FBU and executed Consulting, Projects, PoC projects
+- Delivered **CFD training, technical support, and workshops** for industrial clients
 
-### ✅ NEXTFOAM (Jan 2023 ~ Present)
+
+### ✅ NEXTFOAM (Jan 2023 ~ Oct 2025)
 **Key Responsibilities**:
 - Developed **CFD simulation models** using BARAM and OpenFOAM and executed PoC projects
 - Delivered **CFD training, technical support, and workshops** for industrial clients
